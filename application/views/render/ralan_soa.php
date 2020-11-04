@@ -63,13 +63,13 @@
          <td>Tgl Lahir</td>
          <td><?php echo $d->a4; ?></td>
          <td>Jenis Kelamin</td>
-         <td><?php echo $d->a5; ?></td>
+         <td></td>
        </tr>
        <tr>
          <td colspan="3">Poli yang dituju :  <?php echo $d->a9; ?></td>
          <td colspan="3">DPJP :  <?php echo $d->a39; ?></td>
        </tr>
-  
+
 
     </table>
   <?php } ?>
