@@ -61,7 +61,7 @@
          <td>Nama :</td>
          <td><?php echo $d->a3; ?></td>
          <td>Tgl Lahir</td>
-         <td><?php echo $d->a4; ?></td>
+         <td></td>
          <td>Jenis Kelamin</td>
          <td></td>
        </tr>
