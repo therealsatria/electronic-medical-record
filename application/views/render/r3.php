@@ -1,0 +1,322 @@
+<html>
+<head>
+   <style>
+      tdx {
+         border: 1px solid;
+      }
+      td {
+         padding: 4px;
+         font-family: "Times New Roman", Times, serif;
+      }
+      .logoimg {
+         max-width: 15%;
+         height: auto;
+      }
+      body {
+         color: 000000;
+      }
+   </style>
+</head>
+<body>
+  
+         <table width='' align='left' border='0' cellspacing='0' cell>
+            <tr>
+               <td colspan='6'>
+                  <table width='100%' align='left' border='0' cellspacing='0' cell>
+                     <tr>
+                        <td width='20%' align='center'> <img class="logoimg" src="<?= base_url('assets/dist/img/pmc.jpg'); ?>"> </td>
+                        <td>
+                           <center>
+                              <font color='000000' face='Lucida Console'>RS Pelengkap Medical Center</font> <br>
+                              <font color='000000' face='Lucida Console'> Jl. Ir. Juanda No. 03, Jombang, Jawa
+                                 Timur<br />
+                                 Telp. 877945, E-mail : rspmcjombang@ymail.com </font>
+                           </center>
+                        </td>
+                        <td width='20%' align='center'> <b color='000000' size='3' face='Tahoma'>FORM RM.03A
+                              <br>---------------------<br><?= $no_rm; ?></b></td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+            <!-- ========= HEADER HALAMAN ====================================================================================== -->
+            <tr>
+               <td colspan="6">
+                  <hr />
+               </td>
+            </tr>
+            <?php foreach($rm as $n){ ?>
+            <tr>
+               <td>Nama</td>
+               <td>:</td>
+               <td><?php echo $n->nama_lengkap; ?></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>Tanggal Lahir</td>
+               <td>:</td>
+               <td><?php echo $n->tgl_lhr; ?></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>Jenis Kelamin</td>
+               <td>:</td>
+               <td><?php echo $n->jk; ?></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>Alamat</td>
+               <td>:</td>
+               <td><?php echo $n->alamat; ?></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>Paviliun</td>
+               <td>:</td>
+               <td><?php echo $n->kamar; ?></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td colspan='6'>
+                  <br><b size='3' face='Tahoma'>PASIEN ATAU WALI DIMINTA MEMBACA, MEMAHAMI, DAN MENGISI INFORMASI BERIKUT :</b><br></td>
+            </tr>
+            <tr>
+               <td>Nama</td>
+               <td>:</td>
+               <td><?php echo $n->nama_pj; ?></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>Tanggal Lahir</td>
+               <td>:</td>
+               <td><?php echo $n->tgl_lhr_pj; ?></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>Alamat</td>
+               <td>:</td>
+               <td><?php echo $n->alamat_pj; ?></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>Nomor Telepon</td>
+               <td>:</td>
+               <td><?php echo $n->tlp_pj; ?></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+
+            <tr>
+               <td colspan="6"><br>
+                  <p class="">
+                     Selaku pasien RS Pelengkap Medical Center Jombang dengan ini menyatakan
+                     persetujuan : <br><br>
+                     <strong>I. PERSETUJUAN UNTUK PERAWATAN DAN PENGOBATAN</strong><br><br>
+                     1. Saya mengetahui bahwa saya memiliki kondisi yang membutuhkan
+                     perawatan medis, saya mengijinkan dokter
+                     dan professional kesehatan lainnya untuk melakukan prosedur diagnostik
+                     dan untuk memberikan pengobatan medis
+                     seperti yang diperlukan dalam penilaian profesional mereka. Prosedur
+                     diagnostik dan perawatan medis termasuk terapi
+                     tidak terbatas pada electrodiagrams, X-ray, tes darah, terapi fisik, dan
+                     pemberian obat.<br>
+                     2. Saya sadar bahwa praktik kedokteran dan bedah bukanlah ilmu pasti dan
+                     saya mengakui bahwa tidak ada jaminan atas hasil
+                     apapun terhadap perawatan prosedur atau pemeriksaan apapun yang
+                     dilakukan kepada saya.
+                     3. Saya mengerti dan memahami bahwa :<br>
+                     a. saya memiliki hak untuk mengajukan pertanyaan tentang pengobatan yang
+                     diusulkan (termasuk identitas setiap orang yang
+                     memberikan atau mengamati pengobatan ) setiap saat. <br>
+                     b. Saya mengerti dan memahami bahwa saya memiliki hak untuk persetujuan
+                     atau menolak persetujuan, untuk setiap prosedur terapi.<br>
+                     c. Saya mengerti bahwa banyak dokter pada staf medis Rumah Sakit yang
+                     bukan karyawan tetapi staf tamu yang diberikan hak untuk
+                     menggunakan fasilitas untuk perawatan dan pengobatan pasien
+                     mereka.<br><br>
+                     <strong>II. BARANG-BARANG MILIK PASIEN</strong><br><br>
+                     saya telah memahami bahwa rumah sakit tidak bertanggung jawab atas semua
+                     kehilangan barang-barang milik saya dan saya secara pribadi
+                     bertanggung jawab atas barang-barang berharga yang saya miliki termasuk
+                     uang, perhiasan, buku cek, kartu kredit, handphone atau
+                     barang lainnya. Dan apabila saya membutuhkan maka saya dapat menitipkan
+                     barang-barang saya kepada rumah sakit.<br><br>
+                     saya juga mengerti bahwa saya harus memberitahu/menitipkan pada RS jika
+                     saya meiliki gigi palsu, kacamata, lensa kontak, prosthetics atau
+                     barang lainnya yang saya butuhkan untuk diamankan.<br><br>
+                     <strong>III. KEINGINAN PRIVASI PASIEN</strong><br><br>
+
+                     <?php echo $n->privasi; ?><br>
+
+                     Rumah sakit memberi akses bagi keluarga dan handai taulan serta
+                     orang-orang yang menengok / menemui saya.<br><br>
+                     <strong>IV. PERSETUJUAN PELEPASAN INFORMASI</strong><br><br>
+                     saya memahami informasi yang ada di dalam diri saya, termasuk Diagnosis,
+                     hasil laboratorium dan hasil tes diagnostik yang akan digunakan
+                     untuk perawatan medis, Rumah Sakit Pelengkap Medical Center Jombang akan
+                     menjamin kerahasiaanya.<br>
+                     Saya memberi wewenang kepada RS untuk memberikan informasi tentang
+                     diagnosis, hasil pelayanan dan pengobatan
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td>Nama</td>
+               <td>:</td>
+               <td><?php echo $n->nm1_form3; ?></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>Alamat</td>
+               <td>:</td>
+               <td><?php echo $n->almt1_form3; ?></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>Nama</td>
+               <td>:</td>
+               <td><?php echo $n->nm2_form3; ?></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>Alamat</td>
+               <td>:</td>
+               <td><?php echo $n->almt2_form3; ?></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td colspan="6">
+                  <p><strong>V. HAK DAN TANGGUNG JAWAB PASIEN</strong><br><br>
+                     saya memiliki hak untuk mengambil bagian dalam keputusan mengenai
+                     penyakit saya dan dalam hal perawatan medis dan rencana pengobatan.<br>
+                     Saya telah mendapat informasi tentang "Hak dan Tanggung jawab pasien" di
+                     Rumah Sakit Pelengkap Medical Center Jombang
+                     melalui leaflet dan banner yang disediakan oleh petugas.<br>
+                  </p>
+                  <p class="small">
+                     <strong>- HAK PASIEN :</strong><br>
+                     1. Pasien berhak memperoleh informasi mengenai tata tertib dan peraturan
+                     yang berlaku di Rumah Sakit.<br>
+                     2. Pasien berhak memperoleh informasi tentang hak dan kewajiban
+                     pasien.<br>
+                     3. Pasien berhak memperoleh layanan yang manusiawi, adil, jujur, dan
+                     tanpa deskriminasi.<br>
+                     4. Pasien berhak memperoleh layanan kesehatan yang bermutu sesuai
+                     standart profesi dan Standart Prosedur Operasional.<br>
+                     5. Pasien berhak memperoleh layanan yang efektif dan efisien sehingga
+                     pasien terhindar dari kerugian fisik dan materi.<br>
+                     6. Pasien berhak mengajukan pengaduan atas kualitas pelayanan yang
+                     didapatkan.<br>
+                     7. Pasien berhak memilih dokter dan kelas perawatan sesuai dengan
+                     keinginannya dan peraturan yang berlaku di Rumah Sakit.<br>
+                     8. Pasien berhak meminta konsultasi tentang penyakit yang dideritanya
+                     kepada dokter lain yang mempunyai
+                     Surat izin Praktek (SIP) baik di dalam maupun di luar Rumah Sakit.<br>
+                     9. Pasien berhak mendapatkan Privasi dan kerahasiaan penyakit yang
+                     diderita termasuk data-data medisnya.<br>
+                     10. Pasien berhak mendapatkan informasi yang meliputi diagnosis terhadap
+                     tindakan yang dilakukan serta perkiraan biaya
+                     pengobatan.<br>
+                     11. Pasien berhak memberikan persetujuan atau menolak atas tindakan yang
+                     akan dilakukan oleh tenaga kesehatan
+                     terhadap penyakit yang dideritanya.<br>
+                     12. Pasien berhak didampingi keluarganya dalam keadaan kritis.<br>
+                     13. Pasien berhak menjalankan ibadah sesuai agama dan kepercayaan yang
+                     dianutnya selama itu tidak mengganggu pasien lainnya.<br>
+                     14. pasien berhak memperoleh keamanan dan keselamatan dirinya selama
+                     dalam perawatan di Rumah Sakit.<br>
+                     15. Pasien berhak mengajukan usulan, saran perbaikan atas perilaku Rumah
+                     Sakit terhadap dirinya.<br>
+                     16. Pasien berhak menolak pelayanan bimbingan rohani yang tidak sesuai
+                     dengan agama dan kepercayaan yang dianutnya.<br>
+                     17. Pasien berhak menggugat dan/atau menuntut Rumah Sakit apabila Rumah
+                     Sakit diduga memberikan pelayanan tidak sesuai
+                     dengan standar baik secara perdata atau pidana.<br>
+                     18. Pasien berhak mengeluhkan pelayanan Rumah Sakit yang tidak sesuai
+                     dengan standar pelayanan melalui media cetak dan elektronik
+                     sesuai dengan ketentuan peraturan perundang-undangan.<br><br>
+                     <strong>- KEWAJIBAN PASIEN :</strong><br><br>
+                     1. Pasien dan keluarganya berkewajiban untuk mentaati segala aturan dan
+                     tata tertib Rumah Sakit.<br>
+                     2. Pasien berkewajiban untuk mematuhi segala instruksi dokter dan
+                     perawatan dalam pengobatannya.<br>
+                     3. Pasien berkewajiban memberikan informasi dengan jujur dan
+                     selengkapnya tentang penyakit yang diderita kepada dokter yang
+                     merawat.<br>
+                     4. Pasien dan atau penanggung jawabnya berkewajiban untuk melunasi semua
+                     biaya atas jasa pelayanan Rumah Sakit / dokter.
+                     5. Pasien dan atau penanggung jawabnya berkewajiban memenuhi hal-hal
+                     yang telah disepakati / perjanjian yang telah dibuatnya.
+                  </p>
+                  <p><br>
+                     <strong>VI. INFORMASI RAWAT INAP</strong><br><br>
+                     Saya telah menerima inormasi tentang peraturan yang diberlakukan oleh
+                     Rumah Sakit dan saya beserta keluarga bersedia mematuhinya
+                     termasuk akan mematuhi Jam Berkunjung Pasien
+                     sesuai dengan aturan Rumah Sakit.<br>
+                     Anggota keluarga saya yang menunggu saya bersedia untuk selalu memakai
+                     tanda pengenal khusus yang diberikan oleh Rumah Sakit
+                     dan demi keamanan seluruh pasien setiap keluarga dan siapapun yang akan
+                     mengunjungi saya diluar jam berkunjung untuk diperiksa
+                     identitasnya.<br><br>
+                     <strong>VII. INFORMASI BIAYA</strong><br><br>
+                     Saya memahami tentang informasi biaya pengobatan atau biaya tindakan
+                     yang dijelaskan oleh petugas rumah sakit.<br><br>
+                  </p>
+               </td>
+            </tr>
+            <tr>
+               <td colspan='6' align="center">
+                  <b size='3' face='Tahoma'>PASIEN ATAU WALI DIMINTA MEMBACA, MEMAHAMI, DAN MENGISI INFORMASI BERIKUT
+                     :</b><br></td>
+            </tr>
+            <tr>
+               <td colspan='6' align="center">
+                  <p size='3' face='Tahoma'><?php echo $n->tgl_msuk; ?></p>
+               </td>
+            </tr>
+
+            <tr>
+               <td align="center" colspan="2"><br> Wali</td>
+               <td colspan="2"></td>
+               <td align="center" colspan="2"><br> Saksi</td>
+            </tr>
+            <tr>
+               <td align="center" colspan="2"><img
+                     src="<?php echo $n->ttd_saksi_f3; ?>">
+               </td>
+               <td colspan="2"></td>
+               <td align="center" colspan="2"><img
+                     src="<?php echo $n->ttd_pasien_f3; ?>">
+               </td>
+            </tr>
+         </table>
+            <?php } ?>
+
+</body>
+</html>
