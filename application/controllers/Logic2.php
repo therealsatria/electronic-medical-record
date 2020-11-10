@@ -464,9 +464,10 @@ class Logic2 extends CI_Controller {
 
       $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-P']);
       $this->load->view('render/ralan_soa',$data);
-       // $html = $this->load->view('render/ralan_edit',$data,true);
-       // $mpdf->WriteHTML($html);
-       // $mpdf->Output('form_cppt.pdf','I');
+
+      // $html = $this->load->view('render/ralan_soa',$data,true);
+      // $mpdf->WriteHTML($html);
+      // $mpdf->Output('form_cppt.pdf','I');
     }
 
 }

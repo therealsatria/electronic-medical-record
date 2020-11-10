@@ -21,7 +21,7 @@
       body {
          color: 000000;
       }
-      
+
       .solid {border:1px solid black;
               border-collapse:collapse;}
 
@@ -94,6 +94,3 @@
 </body>
 
 </html>
-
-
-

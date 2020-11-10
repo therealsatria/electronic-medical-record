@@ -3,9 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <script src="<?= base_url('assets/plugins/jquery/jquery.min.js'); ?>"></script>
     <style>
-       td {
+       td,th {
           border: 1px solid;
           font-family: "Times New Roman", Times, serif;
        }
@@ -22,14 +21,19 @@
        }
        #top {
          vertical-align: text-top;
-
        }
+
+       #table{
+         max-width: 2480px;
+         width:100%;
+        }
+
     </style>
   </head>
   <body class="body">
 
 
-    <table width='' bgcolor='#ffffff' align='left' border='0' cellspacing='0' cell>
+    <table id="table" bgcolor='#ffffff' align='left' border='0' cellspacing='0' cell>
        <tr>
           <td colspan='6'>
             <table width='100%' align='left' border='0' cellspacing='0' cell>
@@ -44,35 +48,39 @@
                           </center>
                   </td>
                   <td width='20%' align='center'> <b color='000000' size='3' >FORM RM.01
-                        <br>------------------<br><?= $nrw; ?></b></td>
+                        <br>------------------<br><?= $rm; ?></b></td>
                </tr>
             </table>
           </td>
        </tr>
        <!-- ========= HEADER HALAMAN ====================================================================================== -->
        <hr />
-       <?php foreach ($dt as $d){ ?>
        <tr>
-         <td colspan="2">Tanggal Kunjungan :  <?php echo $d->a6; ?></td>
-         <td colspan="2">Waktu Kunjungan :  <?php echo $d->a7; ?></td>
-         <td colspan="2">Usia Saat Kunjungan :  <?php echo $d->a8; ?></td>
+         <td colspan="3" width="50%">Nama :  <?php echo $nama; ?></td>
+         <td colspan="3">Tanggal Lahir :  <?php echo $tgl; ?></td>
        </tr>
        <tr>
-         <td>Nama :</td>
-         <td><?php echo $d->a3; ?></td>
-         <td>Tgl Lahir</td>
-         <td></td>
-         <td>Jenis Kelamin</td>
-         <td></td>
+         <td colspan="3">Alamat :  <?php echo $alamat; ?></td>
+         <td colspan="3">Jenis Kelamin :  <?php if ($jk == 'L') {echo "Laki - laki";
+         }else{echo "Perempuan";} ?></td>
        </tr>
        <tr>
-         <td colspan="3">Poli yang dituju :  <?php echo $d->a9; ?></td>
-         <td colspan="3">DPJP :  <?php echo $d->a39; ?></td>
+          <th colspan="2">Tanggal</td>
+          <th colspan="2" rowspan="2">S : Subjective &nbsp&nbsp O : Objective<br>A: Assesment &nbsp&nbsp P: Planning</td>
+          <th colspan="2" rowspan="2">TT Petugas</td>
        </tr>
-
-
+       <tr>
+          <th colspan="2">Poliklinik</td>
+       </tr>
+      <?php foreach ($dt as $d){ ?>
+         <tr>
+            <td colspan="2" style="vertical-align: top;"><?php echo $d->tanggal; ?><br><?php echo $d->poliklinik; ?></td>
+            <td colspan="2"><img src="<?php echo $d->soa; ?>"></td>
+            <td colspan="2" style="vertical-align: top;"><img src="<?php echo $d->ttd; ?>"></td>
+         </tr>
+      <?php } ?>
     </table>
-  <?php } ?>
+
 
   </body>
 </html>
