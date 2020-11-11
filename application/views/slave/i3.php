@@ -122,7 +122,7 @@ table.greyGridTable tbody td {
          <label>SOA</label>&nbsp
          <button type="button" class="btn btn-outline-danger btn-sm" onclick="reset();">&#x21bb;</button><br>
          <div id="signature-pad">
-           <canvas id="soa" style="border-radius: 10px; width: 400px; height: 500px;" class="efekttd"></canvas><br>
+           <canvas id="soa" style="border-radius: 10px; width: 550px; height: 850px;" class="efekttd"></canvas><br>
 
          </div>
            <label>TTD Petugas</label>&nbsp

@@ -14,6 +14,7 @@
        }
        table {
          border-collapse: collapse;
+         width: 210mm
        }
 
        td {
@@ -34,7 +35,7 @@
             <table width='100%' align='left' border='0' cellspacing='0' cell>
                <tr>
                <td width='20%' align='center'> <img class="logoimg" src="<?= base_url('assets/dist/img/pmc.jpg'); ?>"> </td>
-                        <td>
+                        <td width="60%">
                           <center>
                              <font color='000000' face='Lucida Console'>RS Pelengkap Medical Center</font> <br>
                              <font color='000000' face='Lucida Console'> Jl. Ir. Juanda No. 03, Jombang, Jawa
@@ -60,18 +61,18 @@
          }else{echo "Perempuan";} ?></td>
        </tr>
        <tr>
-          <th colspan="2" >Tanggal</td>
-          <th colspan="2" rowspan="2">S : Subjective O : Objective<br>A: Assesment P: Planning</td>
-          <th colspan="2" rowspan="2">TT Petugas</td>
+          <th >Tanggal</th>
+          <th colspan="4" rowspan="2">S : Subjective O : Objective<br>A: Assesment P: Planning</th>
+          <th rowspan="2">ttd petugas</th>
        </tr>
        <tr>
-          <th colspan="2">Poliklinik</td>
+          <th>Poliklinik</td>
        </tr>
       <?php foreach ($dt as $d){ ?>
          <tr>
-            <td colspan="2" style="vertical-align: top;"><?php echo $d->tanggal; ?><br><?php echo $d->poliklinik; ?></td>
-            <td colspan="2"><img src="<?php echo $d->soa; ?>"></td>
-            <td colspan="2" style="vertical-align: top;"><img src="<?php echo $d->ttd; ?>"></td>
+            <td width="90px" style="vertical-align: top;"><?php echo $d->tanggal; ?><br><?php echo $d->poliklinik; ?></td>
+            <td colspan="4"><img style="width:550px;" src="<?php echo $d->soa; ?>"></td>
+            <td id="top" width="120px"><img style="width:120px;" src="<?php echo $d->ttd; ?>"></td>
          </tr>
       <?php } ?>
     </table>
