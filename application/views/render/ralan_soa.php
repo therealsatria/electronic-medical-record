@@ -23,17 +23,12 @@
          vertical-align: text-top;
        }
 
-       #table{
-         max-width: 2480px;
-         width:100%;
-        }
-
     </style>
   </head>
   <body class="body">
 
 
-    <table id="table" bgcolor='#ffffff' align='left' border='0' cellspacing='0' cell>
+    <table bgcolor='#ffffff' align='left' border='0' cellspacing='0' cell>
        <tr>
           <td colspan='6'>
             <table width='100%' align='left' border='0' cellspacing='0' cell>
@@ -46,7 +41,7 @@
                                 Timur<br />
                                 Telp. 877945, E-mail : rspmcjombang@ymail.com </font>
                           </center>
-                  </td>
+                        </td>
                   <td width='20%' align='center'> <b color='000000' size='3' >FORM RM.01
                         <br>------------------<br><?= $rm; ?></b></td>
                </tr>
@@ -56,7 +51,7 @@
        <!-- ========= HEADER HALAMAN ====================================================================================== -->
        <hr />
        <tr>
-         <td colspan="3" width="50%">Nama :  <?php echo $nama; ?></td>
+         <td colspan="3">Nama :  <?php echo $nama; ?></td>
          <td colspan="3">Tanggal Lahir :  <?php echo $tgl; ?></td>
        </tr>
        <tr>
@@ -65,8 +60,8 @@
          }else{echo "Perempuan";} ?></td>
        </tr>
        <tr>
-          <th colspan="2">Tanggal</td>
-          <th colspan="2" rowspan="2">S : Subjective &nbsp&nbsp O : Objective<br>A: Assesment &nbsp&nbsp P: Planning</td>
+          <th colspan="2" >Tanggal</td>
+          <th colspan="2" rowspan="2">S : Subjective O : Objective<br>A: Assesment P: Planning</td>
           <th colspan="2" rowspan="2">TT Petugas</td>
        </tr>
        <tr>

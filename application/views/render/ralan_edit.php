@@ -29,7 +29,7 @@
   <body class="body">
 
 
-    <table width='' bgcolor='#ffffff' align='left' border='0' cellspacing='0' cell>
+    <table bgcolor='#ffffff' align='left' border='0' cellspacing='0' cell>
        <tr>
           <td colspan='6'>
             <table width='100%' align='left' border='0' cellspacing='0' cell>

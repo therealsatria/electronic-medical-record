@@ -463,11 +463,11 @@ class Logic2 extends CI_Controller {
       $data['dt'] = $this->mdaftar->filtersoa($nr);
 
       $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-P']);
-      $this->load->view('render/ralan_soa',$data);
+      //$this->load->view('render/ralan_soa',$data,true);
 
-      // $html = $this->load->view('render/ralan_soa',$data,true);
-      // $mpdf->WriteHTML($html);
-      // $mpdf->Output('form_cppt.pdf','I');
+      $html = $this->load->view('render/ralan_soa',$data,true);
+      $mpdf->WriteHTML($html);
+      $mpdf->Output('form_cppt.pdf','I');
     }
 
 }
