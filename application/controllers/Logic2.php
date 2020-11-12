@@ -357,6 +357,7 @@ class Logic2 extends CI_Controller {
         $dtJSON = '{"data": [xxx]}';
         $dtisi = "";
         $dt = $this->mdaftar->filtersoa($norawat);
+        $i = "1";
         foreach ($dt as $k){
             $tanggal = $k->tanggal;
             $poli = $k->poliklinik;
@@ -370,13 +371,12 @@ class Logic2 extends CI_Controller {
 
             $v_soa = " <img data-kode='".$idsoa."' onclick='edit(this)' src=".$soa."> ";
             $v_ttd = " <img data-kode='".$idsoa."' onclick='edit(this)' src=".$ttd."> ";
-
-            $class = "btn btn-block btn-outline-warning btn-sm";
-
-            $edit = "<button class='".$class."' data-kode='".$idsoa."' onclick='edit(this)'>$idsoa</button>";
+            $n1 = $i; $i++;
+            $edit = "<button class='btn btn-block' data-kode='".$idsoa."' onclick='edit(this)'>$n1</button>";
             $anchor = "<code><a data-kode='".$idsoa."' onclick='edit(this)'>$c1</a></code>";
+            $action = "<i data-kode='".$idsoa."' onclick='remove($idsoa)' class='fas fa-eraser' style='font-size:24px;'></i>";
             //$aksi = "<button type='button' class='btn btn-info btn-rounded waves-effect waves-light' style='margin-top: 5px;' data-kode='".$no_reg."' onclick='filter(this)'>Pilih</button>&nbsp<button type='button' class='btn btn-success btn-rounded waves-effect waves-light' style='margin-top: 5px;' data-kode='".$no_reg."' onclick='render(this)'>Cetak</button>";
-            $dtisi .= '["'.$edit.'","'.$anchor.'","'.$v_soa.'","'.$v_ttd.'"],';
+            $dtisi .= '["'.$edit.'","'.$anchor.'","'.$v_soa.'","'.$v_ttd.'","'.$action.'"],';
         }
         $dtisifix = rtrim($dtisi, ",");
         $data = str_replace("xxx", $dtisifix, $dtJSON);
@@ -468,6 +468,12 @@ class Logic2 extends CI_Controller {
       $html = $this->load->view('render/ralan_soa',$data,true);
       $mpdf->WriteHTML($html);
       $mpdf->Output('form_cppt.pdf','I');
+    }
+
+    public function dropsoa(){
+      $f1 = trim($this->input->post("kd"));
+				$operasi = $this->mdaftar->dropsoa($f1);
+				echo  $operasi;
     }
 
 }

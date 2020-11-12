@@ -203,4 +203,11 @@ class Mdaftar extends CI_Model{
 		}else{return 0;}
 	}
 
+	public function dropsoa($kode){
+		$sql = "DELETE FROM tb_soa WHERE id_soa='$kode'";
+		$querySQL = $this->db->query($sql);
+		if($querySQL){return "1";}
+		else{return "0";}
+	}
+
 }
