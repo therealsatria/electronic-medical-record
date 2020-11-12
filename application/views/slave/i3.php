@@ -140,39 +140,28 @@ table.greyGridTable tbody td {
 </div>
 
 <script>
-function remove(x){
-      var kode = x;
-      if(kode == ""){
-          Swal.fire({title: 'Gagal', text: 'Data yang akan dihapus Invalid', type: 'error'});
-          return;
-      }
-      console.log(kode);
-      Swal.fire({
-          title: 'Hapus',
-          text: "Anda Yakin Ingin Menghapus Data Barang ?",
-          type: 'warning',
-          showCancelButton: true,
-          confirmButtonClass: 'btn btn-confirm mt-2',
-          cancelButtonClass: 'btn btn-cancel ml-2 mt-2',
-          confirmButtonText: 'Ya',
-          cancelButtonText: 'Tidak'
-      }).then(function () {
-          $.ajax({
-              url: "<?= base_url('logic2/dropsoa'); ?>",
-              method: "POST",
-              data: {kd: kode},
-              cache: "false",
-              success: function(x){
-                  if(x == 1){
-                      Swal.fire({title: 'Berhasil', text: 'Data Barang Berhasil di Hapus', type: 'success'});
-                      tbldt.ajax.reload(null, false);
-                  }else{
-                      Swal.fire({title: 'Gagal', text: 'Ada Beberapa Masalah dengan Data yang Anda Isikan !', type: 'error'});
-                  }
-              }
 
-          })
-      })
+  function remove(x){
+      var kode = x;
+      var konfirmasi = confirm("Konfirmasi hapus data soap ?");
+      var text = "";
+
+      if(konfirmasi === true) {
+        $.ajax({
+            url: "<?= base_url('logic2/dropsoa'); ?>",
+            method: "POST",
+            data: {kd: kode},
+            cache: "false",
+            success: function(x){
+                if(x == 1){
+                    Swal.fire({title: 'Berhasil', text: 'Data Barang Berhasil di Hapus', type: 'success'});
+                    tbldt.ajax.reload(null, false);
+                }else{
+                    Swal.fire({title: 'Gagal', text: 'Ada Beberapa Masalah dengan Data yang Anda Isikan !', type: 'error'});
+                }
+            }
+        })
+      }
   }
 
   function edit(el) {

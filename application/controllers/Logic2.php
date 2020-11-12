@@ -374,7 +374,7 @@ class Logic2 extends CI_Controller {
             $n1 = $i; $i++;
             $edit = "<button class='btn btn-block' data-kode='".$idsoa."' onclick='edit(this)'>$n1</button>";
             $anchor = "<code><a data-kode='".$idsoa."' onclick='edit(this)'>$c1</a></code>";
-            $action = "<i data-kode='".$idsoa."' onclick='remove($idsoa)' class='fas fa-eraser' style='font-size:24px;'></i>";
+            $action = "<i  data-kode='".$idsoa."' onclick='edit(this)' class='fas fa-edit' style='font-size:24px;'></i> &nbsp <i data-kode='".$idsoa."' onclick='remove($idsoa)' class='fas fa-eraser' style='font-size:24px;'></i>";
             //$aksi = "<button type='button' class='btn btn-info btn-rounded waves-effect waves-light' style='margin-top: 5px;' data-kode='".$no_reg."' onclick='filter(this)'>Pilih</button>&nbsp<button type='button' class='btn btn-success btn-rounded waves-effect waves-light' style='margin-top: 5px;' data-kode='".$no_reg."' onclick='render(this)'>Cetak</button>";
             $dtisi .= '["'.$edit.'","'.$anchor.'","'.$v_soa.'","'.$v_ttd.'","'.$action.'"],';
         }
