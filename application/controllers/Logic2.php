@@ -318,7 +318,7 @@ class Logic2 extends CI_Controller {
             $kd_dokter = $k->nm_dokter;
             $tgl = $k->a6;
             $anchor = "<code><a data-kode='".$no_reg."' onclick='edit(this)'>$no_reg</a></code>";
-            $aksi = "<button type='button' class='btn btn-info btn-rounded waves-effect waves-light' style='margin-top: 5px;' data-kode='".$no_reg."' onclick='filter(this)'>Pilih</button>&nbsp<button type='button' class='btn btn-success btn-rounded waves-effect waves-light' style='margin-top: 5px;' data-kode='".$no_reg."' onclick='render(this)'>Cetak</button>";
+            $aksi = "<button type='button' class='btn btn-info btn-rounded btn-sm waves-effect waves-light' style='margin-top: 5px;' data-kode='".$no_reg."' onclick='filter(this)'>SOAP</button>&nbsp<button type='button' class='btn btn-danger btn-sm btn-rounded waves-effect waves-light' style='margin-top: 5px;' data-kode='".$no_reg."' onclick='remove(this)'>Hapus</button>";
             $dtisi .= '["'.$norm.'","'.$anchor.'","'.$kd_poli.'","'.$kd_dokter.'","'.$tgl.'","'.$aksi.'"],';
         }
         $dtisifix = rtrim($dtisi, ",");
@@ -473,6 +473,12 @@ class Logic2 extends CI_Controller {
     public function dropsoa(){
       $f1 = trim($this->input->post("kd"));
 				$operasi = $this->mdaftar->dropsoa($f1);
+				echo  $operasi;
+    }
+
+    public function dropralan(){
+      $f1 = trim($this->input->post("kd"));
+				$operasi = $this->mdaftar->dropralan($f1);
 				echo  $operasi;
     }
 

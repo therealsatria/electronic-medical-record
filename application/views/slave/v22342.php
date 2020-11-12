@@ -179,9 +179,7 @@
    var tbldt = $("#tbldata").DataTable({
       "ajax": "<?= base_url('Logic2/ralanbaseJSON'); ?>"
    });
-</script>
 
-<script>
 
    function edit(el) {
            var vl = $(el).data("kode");
@@ -194,6 +192,30 @@
       var r = $(el).data("kode");
       console.log(r);
       window.open("<?= base_url('logic2/listsoa/'); ?>"+r,"_self")
+   }
+
+   function remove(x) {
+           var kode = $(x).data("kode");
+           var konfirmasi = confirm("Konfirmasi hapus data ralan ?");
+           var text = "";
+
+           if(konfirmasi === true) {
+             $.ajax({
+                 url: "<?= base_url('logic2/dropralan'); ?>",
+                 method: "POST",
+                 data: {kd: kode},
+                 cache: "false",
+                 success: function(x){
+                     if(x == 1){
+                         Swal.fire({title: 'Berhasil', text: 'Data Barang Berhasil di Hapus', type: 'success'});
+                         tbldt.ajax.reload(null, false);
+                     }else{
+                         Swal.fire({title: 'Gagal', text: 'Ada Beberapa Masalah dengan Data yang Anda Isikan !', type: 'error'});
+                     }
+                 }
+             })
+           }
+
    }
 
 </script>

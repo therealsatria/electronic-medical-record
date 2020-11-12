@@ -210,4 +210,11 @@ class Mdaftar extends CI_Model{
 		else{return "0";}
 	}
 
+	public function dropralan($kode){
+		$sql = "DELETE FROM tb_ralan WHERE a2='$kode'";
+		$querySQL = $this->db->query($sql);
+		if($querySQL){return "1";}
+		else{return "0";}
+	}
+
 }
