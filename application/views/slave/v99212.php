@@ -70,5 +70,5 @@
         console.log(nm);
         location.href = "<?= base_url('bridge/import/'); ?>"+nm;
       }
-    
+
 </script>

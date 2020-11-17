@@ -17,6 +17,7 @@
                 </li>
             </ul>
         </div>
+        df
         <div class="card-body">
             <div class="tab-content" id="custom-tabs-one-tabContent">
                   <div class="tab-pane fade show active" id="custom-tabs-one-home" role="tabpanel" aria-labelledby="custom-tabs-one-home-tab">
@@ -53,7 +54,7 @@
             new SignaturePad(document.getElementById('ttd_saksi_f4'));
             new SignaturePad(document.getElementById('ttd_pasien_f4'));
         });
-        
+
 </script>
 
 <script>
@@ -355,4 +356,3 @@ $(function (){
 });
 
 </script>
-

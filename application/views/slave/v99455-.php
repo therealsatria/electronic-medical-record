@@ -2,7 +2,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Data RM terbaru dari database Khanza</h3>
+            <h3 class="card-title">Data RM terbaru dari database Khanza s</h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
@@ -34,7 +34,7 @@
                   <td><?php echo $u->alamat ?></td>
                   <td><?php echo $u->namakeluarga ?></td>
                   <td><?php echo $u->tgl_daftar ?></td>
-                  
+
                 </tr>
                 <?php } ?>
               </tbody>
@@ -48,4 +48,3 @@
       </div>
       <!-- /.col -->
     </div>
-

@@ -26,6 +26,7 @@ class Bridge extends CI_Controller {
         $this->load->view('masterview',$data);
     }
 
+
     public function filter(){
         $norm = $this->input->post("norm");
         $this->session->set_userdata("keyrm",$norm);
@@ -68,19 +69,12 @@ class Bridge extends CI_Controller {
       $data['pnd'] = $this->mdaftar->enums('tb_pasien','pendidikan');
       $data['kl'] = $this->mdaftar->enums('tb_pasien','hub_pasien');
       $data['hs1'] = $this->mdaftar->getUser('penjab');
+
       $nm = trim(str_replace("'","''",$dx));
 
-      $rs = $this->mdaftar->importsik($nm);
-    //   foreach ($rs as $k){
-    //     $g1 = $k->no_rkm_medis;
-    //     $g2 = $k->nm_pasien;
-
-    // }
-      // $data['g1'] = $g1;
-      // $data['g2'] = $g2;
-      $data['dp'] = $rs;
+      $data['dp'] = $this->mdaftar->importsik($nm);
       $data['rm'] = $dx;
-      $data['fill'] = 'slave/v99475';
+      $data['fill'] = 'slave/v44988';
       $this->load->view('masterview',$data);
     }
 
