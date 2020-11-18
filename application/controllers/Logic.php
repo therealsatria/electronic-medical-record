@@ -499,6 +499,12 @@ class Logic extends CI_Controller {
           redirect('logic/listpasien');
     }
 
+    public function dropPasien(){
+      $f1 = trim($this->input->post("kd"));
+				$operasi = $this->mdaftar->hapuspasien($f1);
+				echo  $operasi;
+    }
+
     public function ralanbase ($no_rm){
       $this->session->set_userdata("keyralan","xxxxx");
       $data['tb_ralan'] = $this->mdaftar->tampil_data3()->result();

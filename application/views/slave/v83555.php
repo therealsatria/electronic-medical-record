@@ -90,7 +90,7 @@
 
         if(konfirmasi === true) {
             $.ajax({
-                url: "<?= base_url('logic/drop'); ?>",
+                url: "<?= base_url('logic/dropPasien'); ?>",
                 method: "POST",
                 data: {kd: kode},
                 cache: "false",
