@@ -64,7 +64,7 @@
                       <a class="dropdown-item" target="_blank" href="render<?= '/'.$u->no_rm ?>/3">Form 3</a>
                       <a class="dropdown-item" target="_blank" href="render<?= '/'.$u->no_rm ?>/4">Form 4</a>
                     </div>
-                    <a href="hapusdata<?= '/s'.$u->no_rm ?>" type="button" class="btn btn-danger" ><i class="nav-icon far fa-trash-alt"></i></a>
+                    <button type='button' class="nav-icon far fa-trash-alt btn btn-danger" data-kode='<?php echo $u->no_rm ?>' onclick='hapus(this)'></button>
                   </div>
                 </div>
               </td>
@@ -81,3 +81,34 @@
   </div>
   <!-- /.col -->
 </div>
+
+<script>
+
+    function hapus(el){
+        var kode = $(el).data("kode");
+        var konfirmasi = confirm("Konfirmasi hapus data pasien ?");
+
+        if(konfirmasi === true) {
+            $.ajax({
+                url: "<?= base_url('logic/drop'); ?>",
+                method: "POST",
+                data: {kd: kode},
+                cache: "false",
+                success: function(x){
+                    if(x == 1){
+                        Swal.fire({title: 'Berhasil', text: 'Data Barang Berhasil di Hapus', type: 'success'});
+                        refresh();
+                    }else{
+                        Swal.fire({title: 'Gagal', text: 'Ada Beberapa Masalah dengan Data yang Anda Isikan !', type: 'error'});
+                    }
+                }
+
+            })
+          }
+    }
+
+    function refresh(){
+      location.reload();
+    }
+
+</script>
