@@ -50,22 +50,8 @@
               <td><?php echo $u->jk ?></td>
               <td>
                 <div class="btn-group">
-                  <!-- <button type="button" class="btn btn-danger" onclick="location.href = 'hapusdata<?= '/'.$u->no_rm ?>';"><i class="nav-icon far fa-trash-alt"></i></button> -->
                   <a href="ralanbase<?= '/'.$u->no_rm ?>" type="button" class="btn btn-primary" ><i class="nav-icon far fas fa-hand-holding-medical"></i></a>
-                  <!-- <button type="button" class="btn btn-info"
-                    onclick="location.href = 'render<?= '/'.$u->no_rm ?>/0';"><i class="nav-icon fas fa-print"></i></button> -->
-                  <a class="btn btn-info" target="_blank" href="render<?= '/'.$u->no_rm ?>/0"><i class="nav-icon fas fa-print"></i></a>
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-block btn-outline-info dropdown-toggle dropdown-icon" data-toggle="dropdown">
-                    </button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" target="_blank" href="render<?= '/'.$u->no_rm ?>/1">Form 1</a>
-                      <a class="dropdown-item" target="_blank" href="render<?= '/'.$u->no_rm ?>/2">Form 2</a>
-                      <a class="dropdown-item" target="_blank" href="render<?= '/'.$u->no_rm ?>/3">Form 3</a>
-                      <a class="dropdown-item" target="_blank" href="render<?= '/'.$u->no_rm ?>/4">Form 4</a>
-                    </div>
-                    <button type='button' class="nav-icon far fa-trash-alt btn btn-danger" data-kode='<?php echo $u->no_rm ?>' onclick='hapus(this)'></button>
-                  </div>
+                  <button type='button' class="nav-icon far fa-trash-alt btn btn-danger" data-kode='<?php echo $u->no_rm ?>' onclick='hapus(this)'></button>
                 </div>
               </td>
             </tr>

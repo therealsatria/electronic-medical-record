@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <script src="<?= base_url('assets/plugins/jquery/jquery.min.js'); ?>"></script>
+    
     <style>
        td {
           border: 1px solid;

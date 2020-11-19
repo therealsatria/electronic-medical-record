@@ -38,6 +38,24 @@ class Logic extends CI_Controller {
         $this->load->view('masterview',$data);
     }
 
+    public function listpasien(){
+      $data['tb_pasien'] = $this->mdaftar->tampil_data1()->result();
+      $data['fill'] = 'slave/v83455';
+      $this->load->view('masterview',$data);
+    }
+
+    public function addrm(){
+      $data['jk'] = $this->mdaftar->enums('tb_pasien','jk');
+      $data['gd'] = $this->mdaftar->enums('tb_pasien','gol_darah');
+      $data['sn'] = $this->mdaftar->enums('tb_pasien','stts_nikah');
+      $data['pnd'] = $this->mdaftar->enums('tb_pasien','pendidikan');
+      $data['kl'] = $this->mdaftar->enums('tb_pasien','hub_pasien');
+      $data['hs1'] = $this->mdaftar->getUser('penjab');
+
+      $data['fill'] = 'slave/v57624';
+      $this->load->view('masterview',$data);
+    }
+
     // ----group data pasien-----------------------------------------------
     public function registrasi(){
       $data['jk'] = $this->mdaftar->enums('tb_pasien','jk');
@@ -276,7 +294,132 @@ class Logic extends CI_Controller {
     }
     // ----/group data pasien----------------------------------------------
 
+    // ----group data cppt-------------------------------------------------
+    public function cpptbase($no_rm){
+      $this->session->set_userdata("keycppt","xxxxx");
+      $data['tb_cppt'] = $this->mdaftar->tampil_data2()->result();
+      $data['norm'] = $no_rm;
+      $data['fill'] = 'slave/v79856';
+      $this->load->view('masterview',$data);
+    }
+
+    public function setkeycppt(){
+        $norm = $this->input->post("norm");
+        $this->session->set_userdata("keycppt",$norm);
+
+        $dt = $this->mdaftar->getrm($norm);
+      if(count($dt) > 0){
+        foreach ($dt as $d){
+          $c1 = $d->no_rm;
+          $c2 = $d->nama_lengkap;
+          $c3 = $d->tgl_lhr;
+          $c4 = $d->kamar;
+        }
+        echo "$c1|$c2|$c3|$c4";
+      }else{
+        echo "0";
+      }
+    }
+
+    public function cpptbaseJSON(){
+        $norm = $this->session->userdata("keycppt");
+        $dtJSON = '{"data": [xxx]}';
+        $dtisi = "";
+        $p = " ";
+        $dt = $this->mdaftar->filtercpptbase($norm);
+        foreach ($dt as $k){
+            $norm = $k->no_rm;
+            $nocppt = $k->no_cppt;
+            $ppa = $k->ppa;
+            $tgl = $k->tanggal;
+            $jam = $k->jam;
+            $aksi = "<button type='button' class='btn btn-info btn-rounded waves-effect waves-light' style='margin-top: 5px;' data-kode='".$nocppt."' onclick='filter(this)'>Pilih</button>&nbsp<button type='button' class='btn btn-success btn-rounded waves-effect waves-light' style='margin-top: 5px;' data-kode='".$nocppt."' onclick='render(this)'>Cetak</button>";
+            $dtisi .= '["'.$norm.'","'.$nocppt.'","'.$ppa.'","'.$tgl.'","'.$jam.'","'.$aksi.'"],';
+        }
+        $dtisifix = rtrim($dtisi, ",");
+        $data = str_replace("xxx", $dtisifix, $dtJSON);
+        echo $data;
+    }
+
+    public function tambahcppt($no_rm){
+      $data['norm'] = $no_rm;
+      $data['fill'] = 'slave/v88897';
+      $this->load->view('masterview',$data);
+    }
+
+    public function editCppt(){
+      $norm = $this->input->post("cp");
+        $dt = $this->mdaftar->getcp($norm);
+      if(count($dt) > 0){
+        foreach ($dt as $d){
+          $c1 = $d->no_cppt;
+          $c2 = $d->ppa;
+          $c3 = $d->soap;
+          $c4 = $d->paraf;
+        }
+        echo "$c1|$c2|$c3|$c4";
+      }else{
+        echo "0";
+      }
+    }
+
+    public function getforcppt(){
+      $rv = $this->input->post("rm");
+      $dt = $this->mdaftar->getrm($rv);
+      if(count($dt) > 0){
+        foreach ($dt as $d){
+          $c1 = $d->no_rm;
+          $c2 = $d->nama_lengkap;
+          $c3 = $d->tgl_lhr;
+          $c4 = $d->kamar;
+        }
+        echo "$c1|$c2|$c3|$c4";
+      }else{
+        echo "0";
+      }
+    }
+
+    public function addcppt(){
+      $f1 = trim(str_replace("'","''",$this->input->post("p1")));
+      $f2 = trim(str_replace("'","''",$this->input->post("p2")));
+      $f3 = trim(str_replace("'","''",$this->input->post("p3")));
+      $f4 = trim(str_replace("'","''",$this->input->post("p4")));
+      $f5 = trim($this->input->post("p5"));
+      $f6 = trim($this->input->post("p6"));
+
+      $dt = array(
+        'no_rm' => $f1,
+        'tanggal' => $f2,
+        'jam' => $f3,
+        'ppa' => $f4,
+        'soap' => $f5,
+        'paraf' => $f6,
+      );
+      $operasi = $this->mdaftar->storecppt($dt,'tb_cppt');
+      echo $operasi;
+    }
+
+    public function updatecppt(){
+      $f1 = trim($this->input->post("v1"));
+      $f2 = trim($this->input->post("v2"));
+      $f3 = trim($this->input->post("v3"));
+
+      $dt = array(
+        'soap' => $f1,
+        'paraf' => $f2,
+      );
+
+      $where = array(
+        'no_cppt' => $f3
+      );
+
+      $operasi = $this->mdaftar->update_data($where,$dt,'tb_cppt');
+      echo $operasi;
+    }
+    // ----/group data cppt------------------------------------------------
+
     // ----group data cetak------------------------------------------------
+
     public function cetakmpdf(){
       $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-P']);
       $html1 = $this->load->view('render/cpptraw',[],true);
@@ -285,15 +428,58 @@ class Logic extends CI_Controller {
       $mpdf->Output('form_cppt.pdf','I');
     }
 
-    public function CetakPasien($rm){
-      $data['dt'] = $this->mdaftar->getrm($rm);
-      $data['rm'] = $rm;
-      //$this->load->view('render/pasien',$data);
+    public function render($rm,$pg){
+
+      $dt = $this->mdaftar->getrm($rm);
+      $data['no_rm'] = $rm;
+      $data['rm'] = $dt;
+
       $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-P']);
-      $html = $this->load->view('render/pasien',$data,true);
-      $mpdf->SetAuthor('');
+      if ($pg == 0){
+      $html1 = $this->load->view('render/r1',$data,true);
+      $html2 = $this->load->view('render/r2',$data,true);
+      $html3 = $this->load->view('render/r3',$data,true);
+      $html4 = $this->load->view('render/r4',$data,true);
+        $mpdf->WriteHTML($html1);
+        $mpdf->AddPage();
+        $mpdf->WriteHTML($html2);
+        $mpdf->AddPage();
+        $mpdf->WriteHTML($html3);
+        $mpdf->AddPage();
+        $mpdf->WriteHTML($html4);
+      }else if($pg == 1){
+        $html1 = $this->load->view('render/r1',$data,true);
+        $mpdf->WriteHTML($html1);
+      }else if($pg == 2){
+        $html2 = $this->load->view('render/r2',$data,true);
+        $mpdf->WriteHTML($html2);
+      }else if($pg == 3){
+        $html3 = $this->load->view('render/r3',$data,true);
+        $mpdf->WriteHTML($html3);
+      }else if($pg == 4){
+        $html4 = $this->load->view('render/r4',$data,true);
+        $mpdf->WriteHTML($html4);
+      }
+      $mpdf->Output('form_erm.pdf','I');
+
+    }
+
+    public function rendercppt($cppt){
+
+      $operasi = $this->mdaftar->cetakbycppt($cppt);
+        foreach ($operasi as $k){
+          $data['no_cppt'] = $k->no_cppt;
+          $data['no'] = $k->no_rm;
+            $data['nm'] = $k->nama_lengkap;
+            $data['tgl'] = $k->tgl_lhr;
+            $data['rr'] = $k->kamar;
+        }
+      $data['dt'] = $this->mdaftar->cetakbycppt($cppt);
+      //$this->load->view('render/c1',$data);
+      $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-P']);
+      $html = $this->load->view('render/c1',$data,true);
       $mpdf->WriteHTML($html);
-      $mpdf->Output('form_pasien.pdf','I');
+      $mpdf->Output('form_cppt.pdf','I');
     }
 
     // ----/group data cetak-----------------------------------------------

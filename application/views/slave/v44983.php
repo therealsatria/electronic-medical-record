@@ -2,7 +2,7 @@
 <button type="button" onclick="carirm()" id="btncari" hidden>Cari !</button>
 <div class="row">
   <div class="col-sm-3">
-      <a href="<?= base_url('logic/dataPasien') ?>" class="btn btn-block btn-outline-success"><i class="nav-icon far fa-save"></i> Data Pasien</a>
+      <a href="<?= base_url('logic/dataPasien') ?>" class="btn btn-block btn-outline-success btn-sm"><i class="nav-icon far fa-save"></i> Data Pasien</a>
   </div>
 </div>
 <br>
@@ -329,14 +329,14 @@
                     <center>
                 			<label for="">Pasien / Penanggung Jawab</label></br>
                 			<canvas id="ttd1" class="efekttd" style="width: 300px;"></canvas><br>
-                		   <button type="button" class="btn btn-danger" onclick="hapusttd1()">Reset</button>
+                		   <button type="button" class="btn btn-danger btn-sm" onclick="hapusttd1()">Reset</button>
                 		</center>
                   </div>
                   <div class="col-sm-6">
                     <center>
                 			<label for="">Petugas Admisi</label></br>
                 			<canvas id="ttd2" class="efekttd" style="width: 300px;"></canvas><br>
-                		   <button type="button" class="btn btn-danger" onclick="hapusttd2()">Reset</button>
+                		   <button type="button" class="btn btn-danger btn-sm" onclick="hapusttd2()">Reset</button>
                 		</center>
                   </div>
                 </div>
@@ -344,15 +344,22 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer">
-                <button type="submit" onclick="updatedata()" class="btn btn-info">Update</button>
-                  <a href="<?= base_url('logic/dataPasien') ?>" type="submit" class="btn btn-default float-right">Cancel</a>
+                <button type="submit" onclick="updatedata()" class="btn btn-info btn-sm">Update</button>
+                <button type="button" class="btn btn-success btn-sm" onclick="print()"><i class="nav-icon fas fa-print"></i> Cetak</button>
+                <a href="<?= base_url('logic/dataPasien') ?>" type="submit" class="btn btn-secondary btn-sm float-right">Cancel</a>
               </div>
               <!-- /.card-footer-->
             </div>
             <!-- /.card -->
           </div>
         </div>
-<script type="text/javascript">
+
+<script>
+
+function print(){
+  var y = $("#idcari").val();
+  window.open("<?= base_url('logic/CetakPasien/'); ?>"+y,"_self")
+}
 
 function hapusttd1(){
 var ttd1 = document.getElementById('ttd1');

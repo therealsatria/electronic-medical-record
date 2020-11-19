@@ -456,7 +456,7 @@
            <div class="col-2" style="margin-top: 10px; margin-bottom: 10px; margin-left: 1%;">
               </br>
               <button type="button" class="btn btn-primary btn-sm" onclick="updatedata()">Simpan Form</button>&nbsp&nbsp
-              <button type="button" class="btn btn-success btn-sm" onclick="print()">Cetak</button>
+              <button type="button" class="btn btn-success btn-sm" onclick="print()"><i class="nav-icon fas fa-print"></i> Cetak</button>
            </div>
 
         </div>
