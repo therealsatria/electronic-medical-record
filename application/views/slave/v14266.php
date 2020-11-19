@@ -180,6 +180,8 @@
 
 
 <script>
+  setInterval(function(){ carirm(); location.reload(); }, 10000);
+
   carirm();
 
   function carirm() {
