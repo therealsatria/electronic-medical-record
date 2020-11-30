@@ -70,7 +70,7 @@
 
                         <a href="<?= base_url('Logic/logout') ?>" class="dropdown-item">
                             <i class="fas fa-door-open"></i> Log Out
-                            <span class="float-right text-muted text-sm"><?= $nm; ?></span>
+                            <span class="float-right text-muted text-sm"><?= $nm; ?> | <?= $level; ?></span>
                         </a>
                         <div class="dropdown-divider"></div>
 

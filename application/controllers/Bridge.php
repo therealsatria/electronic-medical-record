@@ -9,6 +9,7 @@ class Bridge extends CI_Controller {
         foreach ($dtlogin as $dl){
         $data["usrnm"] = $dl->username;
         $data["nm"] = $dl->nama;
+        $data["level"] = $dl->level;
         }
         $data['fill'] = 'slave/v14266';
         $this->load->view('masterview', $data, true);

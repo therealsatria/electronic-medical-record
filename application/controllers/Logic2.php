@@ -8,6 +8,7 @@ class Logic2 extends CI_Controller {
       if(is_array($dtlogin)){
         foreach ($dtlogin as $dl){
         $data["usrnm"] = $dl->username;
+        $data["level"] = $dl->level;
         $data["nm"] = $dl->nama;
         }
         $data['fill'] = 'slave/v14266';
