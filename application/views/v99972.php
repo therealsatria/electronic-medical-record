@@ -2,7 +2,7 @@
 <html>
 
 <head>
-   <title>Windows 98</title>
+   <title>Sistem Register</title>
    <meta charset="utf-8">
    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
@@ -12,7 +12,7 @@
          background-image: url("<?= base_url('assets/dist/img/wallpaper98.jpg'); ?>");
          background-repeat: no-repeat;
          background-position: left top;
-         background-size: 400px auto;
+         background-size: 100% auto;
       }
    </style>
    <link rel="icon" href="<?= base_url('assets/dist/img/favicon.ico" type="image/gif') ?>">
@@ -22,22 +22,27 @@
 </head>
 
 <body>
-   <h3>Windows 98</h3>
-   <input type="text" id="user" placeholder="username"><br>
-   <input type="text" id="name" placeholder="nama"><br>
-   <input type="password" id="pass" placeholder="password"><br>
-   <button onclick=simpandata()>
+   <h3>Create Account</h3>
+   <input style="width: 200px;" type="text" id="name" placeholder="nama"><br>
+   <select style="width: 206px;" name="level" id="level">
+     <option value="admin">Admin</option>
+     <option value="user" selected>User</option>
+   </select><br>
+   <input style="width: 200px;" type="text" id="user" placeholder="username"><br>
+   <input style="width: 200px;" type="password" id="pass" placeholder="password"><br><br>
+   <button style="width: 80px;" onclick=simpandata()>
       Register
-   </button><br>
-   <button onclick="window.location.href='<?= base_url('dash') ?>';">
+   </button>
+   <button style="width: 122px;" onclick="window.location.href='<?= base_url('dash') ?>';">
       Masuk Sistem
    </button>
 
    <script>
       function simpandata() {
-         var u = $("#user").val();
-         var n = $("#name").val();
-         var p = $("#pass").val();
+        var n = $("#name").val();
+        var u = $("#user").val();
+        var p = $("#pass").val();
+        var l = $("#level").val();
 
          if (u == "" || n == "" || p == "") {
             Swal.fire('Gagal', 'Ada Isian Yang Masih Kosong', 'error');
@@ -50,6 +55,7 @@
                u: u,
                n: n,
                p: p,
+               l: l,
             },
             cache: "false",
             success: function (x) {

@@ -24,13 +24,13 @@
         <table id="example1" class="table table-bordered table-striped">
           <thead>
             <tr>
-              <th>No</th>
-              <th>No RM <code>(edit Data)</code></th>
+              <th width="2%">No</th>
+              <th width="10%">RM</th>
               <th>Nama Pasien</th>
               <th>Alamat</th>
               <th>PJ Pasien</th>
-              <th>Jenis Kelamin</th>
-              <th>Action</th>
+              <th width="2%">Jenis Kelamin</th>
+              <th width="10%">Action</th>
             </tr>
           </thead>
 
@@ -50,8 +50,8 @@
               <td><?php echo $u->jk ?></td>
               <td>
                 <div class="btn-group">
-                  <a href="ralanbase<?= '/'.$u->no_rm ?>" type="button" class="btn btn-primary" ><i class="nav-icon far fas fa-hand-holding-medical"></i></a>
-                  <button type='button' class="nav-icon far fa-trash-alt btn btn-danger" data-kode='<?php echo $u->no_rm ?>' onclick='hapus(this)'></button>
+                  <a href="ralanbase<?= '/'.$u->no_rm ?>" type="button" class="btn btn-info btn-sm" ><i class="nav-icon far fas fa-hand-holding-medical"></i> Poli</a>
+                  <button type='button' class="nav-icon far fa-trash-alt btn btn-danger btn-sm" data-kode='<?php echo $u->no_rm ?>' onclick='hapus(this)'></button>
                 </div>
               </td>
             </tr>

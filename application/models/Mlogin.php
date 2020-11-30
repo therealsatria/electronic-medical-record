@@ -29,8 +29,8 @@ class Mlogin extends CI_Model {
         return $status;
 	}
 
-	public function register($u, $n, $p){
-		$sql = "INSERT INTO `login` (`username`, `nama`, `password`) VALUES ('$u', '$n', '$p') ";
+	public function register($u, $n, $p, $l){
+		$sql = "INSERT INTO `login` (`username`, `nama`, `password`, `level`) VALUES ('$u', '$n', '$p', '$l') ";
 		$querySQL = $this->db->query($sql);
 		if($querySQL){$status = "1";}
         else {$status = "0";}

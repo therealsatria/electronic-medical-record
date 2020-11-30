@@ -28,8 +28,9 @@ class Logic extends CI_Controller {
     public function reg(){
       $u = $this->input->post("u");
       $n = $this->input->post("n");
+      $l = $this->input->post("l");
       $p = hash1arah($this->input->post("p"));
-      $regusr = $this->Mlogin->register($u, $n, $p);
+      $regusr = $this->Mlogin->register($u, $n, $p, $l);
       echo $regusr;
     }
 
