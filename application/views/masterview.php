@@ -219,7 +219,7 @@
 
         <footer class="main-footer">
             <div class="float-right d-none d-sm-block">
-                <b>logged in as</b> <?= $nm; ?>
+                rendered in {elapsed_time} seconds
             </div>
             <strong>Copyright &copy; 2020 <a href="#">Programmer RS PMC</a>.</strong> All rights reserved.
         </footer>
