@@ -316,7 +316,7 @@
                                     <td><input type="radio" name="radio1" id="a29b" value="0"></td>
                                 </tr>
                                 <tr>
-                                    <td>a.</td>
+                                    <td>b.</td>
                                     <td>Jalan dengan menggunakan alat bantu <br>
                                         (kruk / tripod / kursi roda / orang lain)
                                     </td>
@@ -324,7 +324,7 @@
                                     <td><input type="radio" name="radio2" id="a30b" value="0"></td>
                                 </tr>
                                 <tr>
-                                    <td>a.</td>
+                                    <td>c.</td>
                                     <td>Menopang saat akan duduk : tampak memegang pinggiran kursi / meja / benda lain sebagai penopang saat akan duduk
                                     </td>
                                     <td><input type="radio" name="radio3" id="a31a" value="1"></td>

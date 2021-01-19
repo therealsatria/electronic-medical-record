@@ -18,7 +18,7 @@
     <div class="card">
       <div class="card-header">
         <h3 class="card-title">Data Rekam Medik Pasien</h3>
-      </div>
+      </div> 
       <!-- /.card-header -->
       <div class="card-body">
         <table id="example1" class="table table-bordered table-striped">

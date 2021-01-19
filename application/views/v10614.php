@@ -24,7 +24,7 @@
 		margin: 20px 0 0 0;
   }
   </style>
-  
+
 </head>
 
 <body class="hold-transition login-page">
@@ -80,8 +80,8 @@
 
         <p class="ip">your ip : <?php echo $_SERVER["REMOTE_ADDR"]; ?></p>
         <input type="text" id="txtip" value="<?php echo $_SERVER["REMOTE_ADDR"]; ?>" hidden>
-        
-        
+
+
       </div>
       <!-- /.login-card-body -->
     </div>

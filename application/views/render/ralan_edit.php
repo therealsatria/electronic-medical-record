@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    
+
     <style>
        td {
           border: 1px solid;
@@ -43,7 +43,7 @@
                                 Telp. 877945, E-mail : rspmcjombang@ymail.com </font>
                           </center>
                   </td>
-                  <td width='20%' align='center'> <b color='000000' size='3' >FORM RM.01
+                  <td width='20%' align='center'> <b color='000000' size='3' >FORM RM.RJ1
                         <br>------------------<br><?= $nrw; ?></b></td>
                </tr>
             </table>
@@ -148,19 +148,19 @@
              <td>YA / TIDAK</td>
            </tr>
            <tr>
-             <td>1</td>
+             <td>a.</td>
              <td>Cara berjalan (salah satu atau lebih) <br>
                  tidak seimbang / sempoyongan / limbung</td>
              <td><?php if ($d->a29 == '1') {echo "Ya";}else{echo "Tidak";}?></td>
            </tr>
            <tr>
-             <td>2</td>
+             <td>b.</td>
              <td>Jalan dengan menggunakan alat bantu <br>
                  (kruk / tripod / kursi roda / orang lain)</td>
              <td><?php if ($d->a30 == '1') {echo "Ya";}else{echo "Tidak";}?></td>
            </tr>
            <tr>
-             <td>3</td>
+             <td>c.</td>
              <td>Menopang saat akan duduk : tampak memegang pinggiran kursi / meja / benda lain sebagai penopang saat akan duduk</td>
              <td><?php if ($d->a31 == '1') {echo "Ya";}else{echo "Tidak";}?></td>
            </tr>

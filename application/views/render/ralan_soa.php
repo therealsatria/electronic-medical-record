@@ -43,7 +43,7 @@
                                 Telp. 877945, E-mail : rspmcjombang@ymail.com </font>
                           </center>
                         </td>
-                  <td width='20%' align='center'> <b color='000000' size='3' >FORM RM.01
+                  <td width='20%' align='center'> <b color='000000' size='3' >FORM RM.RJ 
                         <br>------------------<br><?= $rm; ?></b></td>
                </tr>
             </table>
