@@ -76,6 +76,9 @@ table.greyGridTable tbody td {
       <button type="button" class="btn btn-outline-primary btn-sm" onclick="render();">
         Cetak SOAP
       </button>
+      <button type="button" class="btn btn-outline-primary btn-sm" onclick="render2();">
+        Cetak Status
+      </button>
 
       <hr>
       <div class="row">
@@ -356,5 +359,9 @@ table.greyGridTable tbody td {
   function render(){
     var x = $("#rw").val();
     window.open("<?= base_url('logic2/rendersoa/'); ?>"+x,"_self")
+  }
+  function render2(){
+    var x = $("#rw").val();
+    window.open("<?= base_url('logic2/render/'); ?>"+x,"_self")
   }
 </script>

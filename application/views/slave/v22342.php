@@ -72,12 +72,12 @@
             <table id="tbldata" class="table table-bordered table-striped">
                <thead>
                   <tr>
-                     <th>No RM</th>
-                     <th>No Reg <code>(edit)</code></th>
-                     <th>Poli</th>
+                     <th width='50px'>No RM</th>
+                     <th width='110px'>No Reg <code>(edit)</code></th>
+                     <th width='100px'>Poli</th>
                      <th>DPJP</th>
-                     <th>Tanggal</th>
-                     <th>Action</th>
+                     <th width='60px'>Tanggal</th>
+                     <th width='170px'>Action</th>
                   </tr>
                </thead>
             </table>
@@ -192,6 +192,18 @@
       var r = $(el).data("kode");
       console.log(r);
       window.open("<?= base_url('logic2/listsoa/'); ?>"+r,"_self")
+   }
+
+   function render(el) {
+      var r = $(el).data("kode");
+      console.log(r);
+      window.open("<?= base_url('logic2/render/'); ?>"+r,"_self")
+   }
+
+   function render2(el) {
+      var r = $(el).data("kode");
+      console.log(r);
+      window.open("<?= base_url('logic2/rendersoa/'); ?>"+r,"_self")
    }
 
    function remove(x) {
