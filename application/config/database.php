@@ -97,10 +97,10 @@ $db['default'] = array(
 
 $db['database_2'] = array(
 	'dsn'	=> '',
-	'hostname' => '36.94.81.111',
+	'hostname' => '127.0.0.1',
 	'username' => 'root',
-	'password' => 'adminpelengkap',
-	'database' => 'admin_sik',
+	'password' => 'adminpass',
+	'database' => 'rootpass',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
